@@ -14,4 +14,8 @@ export class AppComponent {
 
   title = 'hello-world';
 
+  public multiply(a: number, b: number): number {
+    return a * b;
+  }
+
 }

@@ -26,11 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('hello-world');
   });
 
-  it('should render title', () => {
+  it(`should multiply`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('hello-world app is running!');
+    const app = fixture.componentInstance;
+    expect(app.multiply(2,3)).toEqual(6);
   });
 
 });
