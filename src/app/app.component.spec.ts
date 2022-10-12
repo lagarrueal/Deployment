@@ -32,4 +32,10 @@ describe('AppComponent', () => {
     expect(app.multiply(2,3)).toEqual(6);
   });
 
+  it(`should add`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.add(2,3)).toEqual(5);
+  });
+
 });

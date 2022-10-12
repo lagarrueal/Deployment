@@ -18,4 +18,8 @@ export class AppComponent {
     return a * b;
   }
 
+  public add(a: number, b: number): number {
+    return a + b;
+  }
+
 }
