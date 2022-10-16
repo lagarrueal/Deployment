@@ -25,3 +25,18 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploying on # https://lagarrueal.github.io/Deployment/
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      with:
+        github_access_token: ${{ secrets.ACCESS_TOKEN }}
+        build_configuration: production
+        base_href: ./
+        deploy_branch: webapp
+        angular_dist_build_folder: webapp
